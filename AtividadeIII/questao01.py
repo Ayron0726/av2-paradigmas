@@ -8,7 +8,6 @@ def cont():
         soma += num
     media = soma / i
     print(f"A soma dos números digitados é: {soma}\nA média dos números digitados é: {media}")
-
     pass
 
 cont()

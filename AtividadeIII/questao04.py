@@ -5,7 +5,6 @@ def multiplos():
     for i in range(1, 101):
         if i % 10 == 0:
             print(f"Números múltiplos de 10: {i}\n")
-
     pass
 
 multiplos()

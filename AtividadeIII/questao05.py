@@ -6,7 +6,6 @@ def decrescente():
     while cont >= 0:
         print(f"{cont}")
         cont -= 1
-        
     pass
 
 decrescente()

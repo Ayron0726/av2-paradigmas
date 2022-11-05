@@ -5,7 +5,6 @@ def crescente():
     while cont <= 20:
         print(f"{cont}")
         cont += 1
-    
     pass
 
 crescente()
