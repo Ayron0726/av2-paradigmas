@@ -5,23 +5,24 @@ volumes para acomodar nos caminhões. Faça um programa que leia n caixas e
 seu peso, ao final, o programa deve imprimir a quantidade de volumes, o peso total
 dos volumes e o peso médio dos volumes.'''
 
+import sys
 def caixas():
-    pesoMedio = 0
+    qtdCaixas = int(input("Digite a quantidade de caixas: ")
     pesoTotal = 0
-    caixaTotal = 0
-    qtdCaixas = int(input("Digite a quantidade de caixas: "))
-    pesoCaixa = float(input("Digite o peso das caixas: "))
-    if(pesoCaixa > 0 and pesoCaixa <= 10000 and qtdCaixas > 0 and qtdCaixas <= 200 ):
-        pesoTotal = qtdCaixas * pesoCaixa
-        caixaTotal += qtdCaixas
-        pesoMedio = pesoTotal / qtdCaixas
-        print(f"Quantidade de volumes: {caixaTotal}\nPeso total dos volumes: {pesoTotal:.2f}\nPeso médio dos volumes: {pesoMedio:.2f}")  
-        if(pesoTotal > 10000.00):
-            print("Limite excedido de peso")
-        elif(qtdCaixas > 200):
+    for i in range(1, qtdCaixas + 1):
+        if (qtdCaixas <= 200 and pesoTotal <= 10000):
+            peso = float(input(f"Digite o peso da caixa {i}: "))
+            pesoTotal += peso
+        elif (qtdCaixas > 200):
             print("Limite de volumes excedido")
-    else:
-        print("Valor inválido")
+            sys.exit()
+        elif (pesoTotal > 10000):
+            print("Limite de peso excedido")
+            sys.exit()
+    print(f"Total de volumes: {qtdCaixas}\nPeso total da carga: {pesoTotal}Kg")
+    pesoMedio = pesoTotal / qtdCaixas
+    print(f"\nPeso médio da carga: {pesoMedio}Kg")
+
     pass
 
 caixas()
